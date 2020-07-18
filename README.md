@@ -1,5 +1,5 @@
 ## ToolBox {Footprinting}
-ToolBox {Footprinting} es un conjunto de herramientas desarrolladas en python que permiten realizar la recolección de información sobre un objetivo.
+ToolBox {Footprinting} es un conjunto de herramientas desarrolladas en python que permiten realizar la recolección de información sobre un objetivo. 
 
 ### Dependencias
 
