@@ -1,0 +1,65 @@
+{% extends 'layout.html'%}
+
+{%block title%} DNS {%endblock%}
+
+{%block content%}
+
+
+<div class="container-fluid">
+    <div class="row mt-3 d-flex justify-content-around">
+
+        <div class="col-4">
+            {% with alertas = get_flashed_messages()%}
+            {% if alertas%}
+            {% for alerta in alertas%}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong class="text-center">{{alerta}}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {%endfor%}
+            {%else%}
+            <div class="col-4"></div>
+            {% endif%}
+            {%endwith%}
+            <div class="card m-auto p-3 shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                <div class="form-group">
+                    <h2 class="text-center">DNS</h2>
+                </div>
+
+                <form action="" method="post">
+                    <div class="form-group">
+                        <input type="text" name="dominio" id="" placeholder="dns" class="form-control">
+                    </div>
+                    <input type="submit" value="Resolver" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+
+        <div class="col-8 ">
+
+            {% if not dominios%}
+            <span></span>
+
+            {% else %}
+            <h2 class="text-center text-white bg-dark p-2">{{dominio}}</h2>
+            {%for t, v in dominios.items()%}
+            <h4 class="bg-light">{{t}}</h4>
+            <p>
+                {%for n in v%}
+                <li>{{n}}</li>
+                {% endfor %}
+            </p>
+            {%endfor%}
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock%}

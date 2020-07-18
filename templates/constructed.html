@@ -1,0 +1,64 @@
+{%extends 'layout.html'%}
+
+{% block title%} CONSTRUCTED {%endblock%}
+
+
+{%block content%}
+
+<div class="container-fluid">
+    <div class="row mt-3 d-flex justify-content-around">
+
+
+        <div class="col-4">
+            {% with alertas = get_flashed_messages()%}
+            {% if alertas%}
+            {% for alerta in alertas%}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong class="text-center">{{alerta}}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {%endfor%}
+            {%else%}
+            <div class="col-4"></div>
+            {% endif%}
+            {%endwith%}
+
+            <div class="card m-auto p-3 shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                <div class="form-group">
+                    <h2 class="text-center">CONSTRUCTED</h2>
+                </div>
+
+                <form action="" method="post">
+                    <div class="form-group">
+                        <input type="text" name="url" id="" placeholder="https://www.x.com" class="form-control">
+                    </div>
+                    <input type="submit" value="Resolver" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+
+        <div class="col-8 ">
+            {% if not resolver%}
+            <div class="col-8"></div>
+            {% else %}
+
+            <ul class="list-group m-auto bg-dark" style="width: 30rem;">
+                {%for n, t in resolver.items()%}
+                    <li class="list-group-item"><b>{{n}} :</b> {% for m in t%} {{m}} {%endfor%}</li>
+                {% endfor %}
+            </ul>
+
+
+            {% endif%}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{%endblock%}
