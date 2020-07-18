@@ -1,7 +1,11 @@
 ## ToolBox {Footprinting}
 ToolBox {Footprinting} es un conjunto de herramientas desarrolladas en python que permiten realizar la recolección de información sobre un objetivo. Entre estas mismas se encuentran:
 
+* WHOIS: base de datos publica para consultar el propietario de un dominio o dirección ip.
 
+* DNS: Asocia informacion sobre un dominio web y sus diferentes registros como, servidores de correo, servidores de nombre y registro de direcciones ip.
+
+* CONSTRUCTED: Obtiene la diferentes tecnologias y servicios de aplicativos web.
 
 ### Dependencias
 
@@ -26,7 +30,7 @@ chmod +x configure.sh
 ./configure.sh
 ```
 
-### Aplicacion en curso 
+### Aplicación en curso 
 
 * Dirección del servidor
 ```sh
