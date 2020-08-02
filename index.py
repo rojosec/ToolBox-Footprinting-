@@ -1,4 +1,5 @@
-from flask import Flask,render_template,flash,request,redirect,url_for,abort
+from flask import Flask,render_template,flash,request
+import re
 import whois
 import dns
 import dns.resolver
@@ -7,6 +8,13 @@ import builtwith
 
 app = Flask(__name__)
 app.secret_key = b'ToolBoxFootPrinting'
+
+# patrones de expresiones regulares
+
+numeros = '[0-9]'
+caracteres = "[!#$%&/()=?¡¿'<>:,-_]"
+patron_dominio = "^http" # ==> CONSTRUCTED
+
 
 
 """ INDEX """
@@ -24,9 +32,9 @@ def whoist():
     try:
         sitio_whois = ""
         if request.method == 'POST':
-            sitio = request.form['sitio']
-            if not sitio:
-                flash("ingrese un dominio")
+            sitio = request.form['sitio'] 
+            if re.findall(numeros,sitio) or sitio == "":
+                flash("INGRESE UN DOMINIO VALIDO")
             else:
                 sitio_whois = whois.whois(sitio)
     except Exception as e:
@@ -43,8 +51,8 @@ def footprinting_dns():
     dominios = dict()
     if request.method == 'POST':
         dominio = request.form['dominio']
-        if not dominio:
-            flash("ingrese un dominio")
+        if re.findall(numeros,dominio) or dominio == "":
+            flash("INGRESE UN DOMINIO VALIDO")
         else:
             MX = dns.resolver.query(dominio,'MX')
             NS = dns.resolver.query(dominio,'NS')
@@ -64,11 +72,13 @@ def constructed():
     resolver = ''
     if request.method == 'POST':
         url = request.form['url']
-        if not url or url == " ":
-            flash('Ingrese una URL')
-        else:
+        if re.search(patron_dominio,url):
             resolver = builtwith.parse(url)
-           
+        elif url == "":
+            flash("INGRESE UNA URL")
+        else:
+            flash("¡ VERIFIQUE SU URL !")
+
     return render_template("constructed.html", resolver = resolver)
 
 

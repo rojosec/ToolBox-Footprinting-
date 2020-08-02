@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Verificando..."
+echo "Verificando"
 
 Dependencias(){
     pip3 install flask
@@ -13,7 +13,7 @@ Servidor(){
     python3 index.py	
 }
 
-if [ -d /usr/bin/pip3 ];
+if [ -d /bin/pip3 ];
 then
     echo "pip instalado"
     Dependencias

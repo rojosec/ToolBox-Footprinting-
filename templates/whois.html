@@ -6,11 +6,11 @@
 {% block content%}
 
 <div class="row m-auto" style="width: 100%;">
-    <div class="col-4 mt-3">
+    <div class="col-lg-4 col-sm-12 mt-3">
         {% with alertas = get_flashed_messages()%}
         {% if alertas%}
         {% for alerta in alertas%}
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
             <strong class="text-center">{{alerta}}</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -37,7 +37,7 @@
 
     </div>
 
-    <div class="col-8 mt-3">
+    <div class="col-lg-8 col-sm-12 mt-3">
 
         {% if not sitio%}
         <div class="col-12">
