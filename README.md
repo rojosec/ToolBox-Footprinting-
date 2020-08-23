@@ -25,6 +25,8 @@ El script configure.sh, ya esta configurado por defecto para intalar las depende
 	<img src="Images/1.PNG">
 </div>
 
+<hr>
+
 * Servidor en ejecución en la dirección ==> ( 127.0.0.1:4444 )
 
 <div style="align-items:center;">
