@@ -31,16 +31,22 @@ El script configure.sh, ya esta configurado por defecto para intalar las depende
 	<img src="Images/2.PNG">
 </div>
 
+<hr>
+
 * 
 <div style="align-items:center;">
 	<img src="Images/3.PNG">
 </div>
+
+<hr>
 
 * 
 
 <div style="align-items:center;">
 	<img src="Images/4.PNG">
 </div>
+
+<hr>
 
 * 
 
