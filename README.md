@@ -33,14 +33,14 @@ El script configure.sh, ya esta configurado por defecto para intalar las depende
 
 <hr>
 
-* 
+* Uso de WHOIS
 <div style="align-items:center;">
 	<img src="Images/3.PNG">
 </div>
 
 <hr>
 
-* 
+* Uso de DNS
 
 <div style="align-items:center;">
 	<img src="Images/4.PNG">
@@ -48,7 +48,7 @@ El script configure.sh, ya esta configurado por defecto para intalar las depende
 
 <hr>
 
-* 
+* Uso de Constructed
 
 <div style="align-items:center;">
 	<img src="Images/5.PNG">
