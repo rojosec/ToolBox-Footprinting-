@@ -27,7 +27,7 @@ def index():
 
 """ WHOIS FOOTPRINTING """
 
-@app.route('/whois',methods=['GET','POST'])
+@app.route('/whois/',methods=['GET','POST'])
 def whoist():
     try:
         sitio_whois = ""
@@ -39,20 +39,22 @@ def whoist():
                 sitio_whois = whois.whois(sitio)
     except Exception as e:
         print(e)
-    return render_template("whois.html",sitio =sitio_whois)
+    return render_template("whois.html",sitio = sitio_whois)
 
 
 
 """ DNS FOOTPRINTING """
 
-@app.route('/dns',methods=['GET','POST'])
+@app.route('/dns/',methods=['GET','POST'])
 def footprinting_dns():
     dominio = None
     dominios = dict()
     if request.method == 'POST':
         dominio = request.form['dominio']
-        if re.findall(numeros,dominio) or dominio == "":
+        if re.findall(numeros,dominio):
             flash("INGRESE UN DOMINIO VALIDO")
+        elif dominio == "":
+            flash("INGRESE UN DOMINIO")
         else:
             MX = dns.resolver.query(dominio,'MX')
             NS = dns.resolver.query(dominio,'NS')
@@ -67,7 +69,7 @@ def footprinting_dns():
 
 """ CONSTRUCTED """
 
-@app.route('/constructed',methods=['GET','POST'])
+@app.route('/constructed/',methods=['GET','POST'])
 def constructed():
     resolver = ''
     if request.method == 'POST':

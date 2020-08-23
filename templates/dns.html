@@ -8,11 +8,11 @@
 <div class="container-fluid">
     <div class="row mt-3 d-flex justify-content-around">
 
-        <div class="col-4">
+        <div class="col-lg-4 col-sm-12 ">
             {% with alertas = get_flashed_messages()%}
             {% if alertas%}
             {% for alerta in alertas%}
-            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+            <div class="alert alert-danger alert-dismissible fade show text-center " role="alert">
                 <strong class="text-center">{{alerta}}</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -23,7 +23,7 @@
             <div class="col-4"></div>
             {% endif%}
             {%endwith%}
-            <div class="card m-auto p-3 shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+            <div class="card m-auto p-3 shadow p-3 mb-5 bg-white rounded" style="width: 20rem;">
                 <div class="form-group">
                     <h2 class="text-center">DNS</h2>
                 </div>
@@ -37,13 +37,14 @@
             </div>
         </div>
 
-        <div class="col-8 ">
+        <div class="col-sm-12 col-lg-8 ">
 
             {% if not dominios%}
             <span></span>
 
             {% else %}
-            <h2 class="text-center text-white bg-dark p-2">{{dominio}}</h2>
+            <button class="btn btn-danger ">PDF</button>
+            <h2 class="text-center text-white bg-dark p-1 mt-2">{{dominio}}</h2>
             {%for t, v in dominios.items()%}
             <h4 class="bg-light">{{t}}</h4>
             <p>

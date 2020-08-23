@@ -21,20 +21,9 @@ ToolBox {Footprinting} es un conjunto de herramientas desarrolladas en python qu
 
 El script configure.sh, ya esta configurado por defecto para intalar las dependencias de la herramienta, solo es cuestion de darle permisos de ejecución y ejecutarlo, es necesario que dicho proceso se ejecute en un nivel ROOT.
 
-* Permisos de ejecución
-```sh
-chmod +x configure.sh
-```
-* Ejecución
-```sh
-./configure.sh
-```
+<div style="align-items:center;">
+	<img src="Images/1.PNG">
+</div>
 
-### Aplicación en curso 
-
-* Dirección del servidor
-```sh
-127.0.0.1:4444
-```
 
 
