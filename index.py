@@ -1,3 +1,7 @@
+#!/bin/python3
+
+#Autor: ErickWhiteHat
+
 from flask import Flask,render_template,flash,request
 import re
 import whois
