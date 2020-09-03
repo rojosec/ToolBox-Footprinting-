@@ -60,9 +60,9 @@ def footprinting_dns():
         elif dominio == "":
             flash("INGRESE UN DOMINIO")
         else:
-            MX = dns.resolver.query(dominio,'MX')
-            NS = dns.resolver.query(dominio,'NS')
-            A_IPV4 = dns.resolver.query(dominio, 'A')
+            MX = dns.resolver.resolve(dominio,'MX')
+            NS = dns.resolver.resolve(dominio,'NS')
+            A_IPV4 = dns.resolver.resolve(dominio, 'A')
             dominios = {"Servidores de Correo (MX)":MX,
                         "Servidores de Nombre (NS)":NS,
                         "Registros para direcciones IPV4 (A)":A_IPV4}
